@@ -196,7 +196,7 @@ def receive_data():
 
         # Daten in die Datenbank schreiben
         cursor = connection.cursor()
-        cursor.execute("INSERT INTO wetterdaten (temperatur, luftfeuchtigkeit, messort, espname, sensorname, timestamp) VALUES (%s, %s, %s, %s, %s, %s)", (temperature, humidity, messort, espname, sensorname, timestamp))
+        cursor.execute("INSERT INTO wetterdaten (temperature, luftfeuchtigkeit, ort, espname, sensorname, zeit) VALUES (%s, %s, %s, %s, %s, %s)", (temperature, humidity, messort, espname, sensorname, timestamp))
         connection.commit()
 
         # Aktualisieren der HTML-Seite nach dem Einfügen der Daten
